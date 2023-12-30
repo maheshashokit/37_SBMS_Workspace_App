@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                 		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="user" class="com.ashokit.beans.User" autowire="constructor">
+		<property name="username" value="Mahesh"/>
+		<property name="password" value="Mahesh@123"/>
+		<!-- <property name="address" ref="add"/> -->
+	</bean>
+	
+		<!--  configuring the permanent address -->
+	<bean id="address" class="com.ashokit.beans.Address" >
+		<property name="doorNo" value="1-2-3"/>
+		<property name="streetName" value="XYZ"/>
+		<property name="cityName" value="Hyderabad"/>
+	</bean>
+	
+		<!--  configuring the Temporary address -->
+	<bean id="address1" class="com.ashokit.beans.Address" >
+		<property name="doorNo" value="1-2-3"/>
+		<property name="streetName" value="ABC"/>
+		<property name="cityName" value="Chennai"/>
+	</bean>
+	
+</beans>
