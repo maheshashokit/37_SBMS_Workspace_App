@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                 http://www.springframework.org/schema/beans 
+                 http://www.springframework.org/schema/beans/spring-beans.xsd"> 
+
+   <!--  Configuring Welcome Java Class as Spring Bean -->
+  <bean id="wb" class="com.ashokit.beans.Welcome">
+     		 <!-- Setter Injection -->
+     <property name="message" value="Welcome To Ashok IT.."/>
+  </bean>
+  
+   <!--  Configuring Demo Java Class as Spring Bean -->
+  <bean id="db" class="com.ashokit.beans.Demo">
+     		<!-- Constructor Injection -->
+     <constructor-arg name="topicName" value="Welcome To AshokIT Hyderabad."/>
+  </bean>
+  
+  	<!--  Configuring Test Java Class as Spring Bean -->
+   <bean id="tb" class="com.ashokit.beans.Test">
+   		<property name="courses">
+   			<array>
+   				<value>JavaFullStack</value>
+   				<value>PythonFullStack</value>
+   				<value>DotNetFullStack</value>
+   				<value>UIFullStack</value>
+   				<value>SpringBoot</value>
+   			</array>
+   		</property>
+   		<property name="names">
+   			<list>
+   				<value>Mahesh</value>
+   				<value>Suresh</value>
+   				<value>Rajesh</value>
+   				<value>Nagesh</value>
+   			</list>
+   		</property>
+   		<property name="faculties">
+   			<map>
+   				<entry key="JavaFullStack" value="Mahesh"/>
+   				<entry key="UIFullStack" value="Naveen"/>
+   				<entry key="PythonFullStack" value="JSRao"/>
+   				<entry key="SpringBoot" value="Ashok"/>
+   			</map>
+   		</property>
+   		<property name="props">
+   			<props>
+   				<prop key="databaseName">Oracle</prop>
+   				<prop key="driverClass">oracle.jdbc.driver.OracleDriver</prop>
+   				<prop key="databaseUsername">mahesh</prop>
+   				<prop key="databasePassword">Ashokit@123</prop>
+   			</props>
+   		</property>	
+   </bean>
+   
+   		<!-- configuring the User class as spring Bean -->
+   <bean id="user" class="com.ashokit.beans.User" autowire="">
+   	  <!-- <property name="role" ref="ro"/> -->
+   	  <constructor-arg name="role" ref="ro"/>
+   </bean>
+   
+   		<!--  Configuring the Role Class as Spring Bean -->
+   <bean id="ro" class="com.ashokit.beans.Role"/>
+   
+</beans>
