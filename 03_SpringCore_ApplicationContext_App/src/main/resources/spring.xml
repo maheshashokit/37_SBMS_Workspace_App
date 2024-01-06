@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                 		http://www.springframework.org/schema/beans/spring-beans.xsd">
+                 		
+       <!-- configuring the student class -->
+    <bean id="sb" class="com.ashokit.beans.Student" lazy-init="true" scope="prototype">
+    	<property name="id" value="AIT123"/>
+    	<property name="name" value="Mahesh"/>
+    	<property name="course" value="SpringBoot And Microservices"/>
+    	<property name="emailId" value="mahesh.ashokit@gmail.com"/>
+    </bean>
+    
+    <bean id="tb" class="com.ashokit.beans.Test" lazy-init="true" scope="prototype"/>
+    
+</beans>
